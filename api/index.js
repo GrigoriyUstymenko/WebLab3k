@@ -2,7 +2,7 @@ const app = require('express')();
 const fs = require('fs');
 
 app.post('/api/insertItem', (req, res) => {
-  const items = JSON.parse(require('./items.json'));
+  const items = require('./items.json');
 
   if (!req.body.title || !req.body.content) {
     res.status(400).json({
