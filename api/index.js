@@ -2,7 +2,7 @@ const app = require('express')();
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
-const dataPath = '/tmp/items.json';
+const dataPath = require('os').tmpdir();
 
 app.post('/api/insertItem',jsonParser,async (req, res) => {
   let items = [];
