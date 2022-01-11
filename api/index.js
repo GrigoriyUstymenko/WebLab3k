@@ -1,7 +1,9 @@
 const app = require('express')();
 const fs = require('fs');
+const bodyParser = require('body-parser');
+const jsonParser = bodyParser.json();
 
-app.post('/api/insertItem', (req, res) => {
+app.post('/api/insertItem',jsonParser, (req, res) => {
   const items = require('./items.json');
 
   if (!req.body.title || !req.body.content) {
