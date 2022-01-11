@@ -7,7 +7,10 @@ const dataPath = '/tmp/items.json';
 app.post('/api/insertItem',jsonParser,async (req, res) => {
   let items = [];
   await fs.readFile(dataPath, {encoding: 'utf8'}, (err, data) => {
-    if(err) items = [];
+    if(err) {
+      console.log(err);
+      items = [];
+    }
     else items = JSON.parse(data);
   })
 

@@ -2,7 +2,9 @@
 
 const insertItem = document.querySelector('.insert-item');
 
-const sendItem = async () => {
+const sendItem = async (event) => {
+  event.preventDefault();
+
   const entries = Array.from(insertItem.elements).map(e => [e.name, e.value]);
   const data = Object.fromEntries(entries);
   let messageText = 'Item inserted successfully!';
