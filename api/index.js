@@ -5,7 +5,7 @@ const jsonParser = bodyParser.json();
 const dataPath = '/tmp/items.json';
 
 app.post('/api/insertItem',jsonParser,async (req, res) => {
-  let items;
+  let items = [];
   await fs.readFile(dataPath, {encoding: 'utf8'}, (err, data) => {
     if(err) items = [];
     else items = JSON.parse(data);
@@ -40,7 +40,7 @@ app.post('/api/insertItem',jsonParser,async (req, res) => {
 });
 
 app.get('/api/getItems',async (req, res) => {
-  let items;
+  let items = [];
   await fs.readFile(dataPath, {encoding: 'utf8'}, (err, data) => {
     if(err) items = [];
     else items = JSON.parse(data);
