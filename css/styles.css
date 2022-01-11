@@ -101,22 +101,13 @@ body main .small-upper {
   grid-column: 5;
 }
 
-.number-form {
-  display: none;
+.insert-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.inserted-table, .inserted-cell {
-  border: var(--small-border-length) solid var(--border-color);
-  background-color: var(--bg-color-white);
-}
-
-.inserted-table {
-  table-layout: fixed;
-  width: 100%;
-}
-
-.inserted-cell {
-  max-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.input-content {
+  height: 10em;
 }

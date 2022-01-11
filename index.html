@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lab 2</title>
+    <title>Lab 3</title>
     <link href="/css/styles.css" rel="stylesheet" />
     <script src="/script.js" type="text/javascript" defer></script>
   </head>
@@ -18,49 +18,20 @@
     <main>
       <nav class="menu">
         <ol>
-          <li><a href="/index.html">Page 1</a></li>
-          <li><a href="/index1.html">Page 2</a></li>
-          <li><a href="/index2.html">Page 3</a></li>
-          <li><a href="/index3.html">Page 4</a></li>
-          <li><a href="/index4.html">Page 5</a></li>
+          <li><a href="/index.html">Insert item</a></li>
+          <li><a href="/index1.html">Accordion display</a></li>
         </ol>
       </nav>
 
       <div class="middle-column">
-        <p>
-          Lorem ipsum dolor sit amet. Aut debitis omnis ea dolore earum et quasi
-          minima! Aut facilis galisum At facilis voluptatem et blanditiis alias
-          et totam obcaecati qui quis minus. Non obcaecati aperiam sed
-          reiciendis consequuntur et dolore ducimus et enim veniam. In
-          consequatur tempore a doloribus dolore qui eveniet maiores sit galisum
-          voluptas hic ratione omnis?
-        </p>
-        <img class="block-image" src="/images/img.png" alt="Mario" usemap="#map" />
-        <map id="map" name="map">
-          <area
-            shape="rect"
-            coords="0,0,50,50"
-            alt="Computer"
-            href="index1.html"
-          />
-          <area
-            shape="circle"
-            coords="50,0,50"
-            alt="Computer"
-            href="index2.html"
-          />
-          <area
-            shape="rect"
-            coords="0,50,50,50"
-            alt="Computer"
-            href="index.html"
-          />
-        </map>
-        <p>
-          At velit voluptas qui maiores nobis ut ipsa nostrum est aperiam
-          soluta. Est temporibus blanditiis et exercitationem quae eos eius et
-          reiciendis reiciendis ex amet sequi!
-        </p>
+        <form class="insert-item">
+          <label for="inputTitle">Title:</label>
+          <input name="title" type="text" id="inputTitle" required>
+          <label for="inputContent">Content:</label>
+          <textarea name="content" class="input-content" id="inputContent" required></textarea>
+          <br>
+          <input type="submit" value="Insert item">
+        </form>
       </div>
       <div class="small-upper">
         Lorem ipsum dolor sit amet. Aut debitis omnis ea dolore earum et quasi
@@ -87,12 +58,6 @@
           consequatur tempore a doloribus dolore qui eveniet maiores sit galisum
           voluptas hic ratione omnis?
         </p>
-        <form class="number-form">
-          <label for="inputNumber">Input a number:</label>
-          <br>
-          <input type="number" id="inputNumber" name="inputNumber" required>
-          <input type="submit" value="Minimum digit">
-        </form>
       </div>
       <div class="small-right">
         Lorem ipsum dolor sit amet. Aut debitis omnis ea dolore earum et quasi
@@ -101,11 +66,6 @@
         reiciendis consequuntur et dolore ducimus et enim veniam. In
         consequatur tempore a doloribus dolore qui eveniet maiores sit galisum
         voluptas hic ratione omnis?
-        <form class="color-form">
-          <label for="inputColor">What color do you want to change the text to?</label>
-          <br>
-          <input type="text" id="inputColor" name="inputColor">
-        </form>
       </div>
     </main>
     <footer>
