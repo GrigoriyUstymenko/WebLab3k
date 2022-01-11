@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
 app.post('/api/insertItem',jsonParser, (req, res) => {
-  const items = require('./items.json');
+  const items = require('../tmp/items.json');
 
   if (!req.body.title || !req.body.content) {
     res.status(400).json({
@@ -25,7 +25,7 @@ app.post('/api/insertItem',jsonParser, (req, res) => {
     content: req.body.content
   })
 
-  fs.writeFileSync('./items.json', JSON.stringify(items));
+  fs.writeFileSync('../tmp/items.json', JSON.stringify(items));
 
   res.status(200).json({
     meta: {
@@ -35,7 +35,7 @@ app.post('/api/insertItem',jsonParser, (req, res) => {
 });
 
 app.get('/api/getItems', (req, res) => {
-  const items = require('./items.json');
+  const items = require('../tmp/items.json');
   res.status(200);
   res.json(items);
 });
