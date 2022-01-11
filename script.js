@@ -9,7 +9,7 @@ const sendItem = async () => {
 
   try {
     const response = await fetch('/api/insertItem', {
-      method: 'GET',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
