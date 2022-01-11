@@ -6,4 +6,8 @@ app.post('/api/insertItem', (req, res) => {
   res.json(items);
 });
 
+app.get('/api', (req,res) => {
+  res.send('Hello');
+})
+
 module.exports = app;
