@@ -2,9 +2,14 @@ const app = require('express')();
 const fs = require('fs');
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+const dataPath = '/tmp/items.json';
 
-app.post('/api/insertItem',jsonParser, (req, res) => {
-  const items = require('../tmp/items.json');
+app.post('/api/insertItem',jsonParser,async (req, res) => {
+  let items;
+  await fs.readFile(dataPath, {encoding: 'utf8'}, (err, data) => {
+    if(err) items = [];
+    else items = JSON.parse(data);
+  })
 
   if (!req.body.title || !req.body.content) {
     res.status(400).json({
@@ -25,7 +30,7 @@ app.post('/api/insertItem',jsonParser, (req, res) => {
     content: req.body.content
   })
 
-  fs.writeFileSync('../tmp/items.json', JSON.stringify(items));
+  fs.writeFileSync(dataPath, JSON.stringify(items));
 
   res.status(200).json({
     meta: {
@@ -34,8 +39,12 @@ app.post('/api/insertItem',jsonParser, (req, res) => {
   });
 });
 
-app.get('/api/getItems', (req, res) => {
-  const items = require('../tmp/items.json');
+app.get('/api/getItems',async (req, res) => {
+  let items;
+  await fs.readFile(dataPath, {encoding: 'utf8'}, (err, data) => {
+    if(err) items = [];
+    else items = JSON.parse(data);
+  })
   res.status(200);
   res.json(items);
 });
