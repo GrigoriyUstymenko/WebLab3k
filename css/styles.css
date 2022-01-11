@@ -82,7 +82,8 @@ body main .small-upper {
   grid-row: 1;
   padding: 30px;
 }
-.small-left, .small-right {
+.small-left,
+.small-right {
   padding: 30px;
   display: flex;
   flex-direction: column;

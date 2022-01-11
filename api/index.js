@@ -5,15 +5,14 @@ const jsonParser = bodyParser.json();
 const dataPath = `${require('os').tmpdir()}/items.json`;
 console.log(dataPath);
 
-app.post('/api/insertItem',jsonParser,async (req, res) => {
+app.post('/api/insertItem', jsonParser, async (req, res) => {
   let items = [];
-  await fs.readFile(dataPath, {encoding: 'utf8'}, (err, data) => {
-    if(err) {
+  await fs.readFile(dataPath, { encoding: 'utf8' }, (err, data) => {
+    if (err) {
       console.log(err);
       items = [];
-    }
-    else items = JSON.parse(data);
-  })
+    } else items = JSON.parse(data);
+  });
 
   if (!req.body.title || !req.body.content) {
     res.status(400).json({
@@ -31,8 +30,8 @@ app.post('/api/insertItem',jsonParser,async (req, res) => {
 
   items.push({
     title: req.body.title,
-    content: req.body.content
-  })
+    content: req.body.content,
+  });
 
   fs.writeFileSync(dataPath, JSON.stringify(items));
 
@@ -43,12 +42,12 @@ app.post('/api/insertItem',jsonParser,async (req, res) => {
   });
 });
 
-app.get('/api/getItems',async (req, res) => {
+app.get('/api/getItems', async (req, res) => {
   let items = [];
-  await fs.readFile(dataPath, {encoding: 'utf8'}, (err, data) => {
-    if(err) items = [];
+  await fs.readFile(dataPath, { encoding: 'utf8' }, (err, data) => {
+    if (err) items = [];
     else items = JSON.parse(data);
-  })
+  });
   res.status(200);
   res.json(items);
 });

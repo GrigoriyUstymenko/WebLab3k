@@ -1,0 +1,60 @@
+* {
+  --bg-color-greentext: #01401d;
+  --bg-color-whitetext: white;
+  --bg-color-title: #3ac779;
+  --bg-color-content: #b3fccc;
+  --bg-color-hightlighted: #2f7346;
+}
+
+.items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.item-title {
+  color: var(--bg-color-greentext);
+  overflow: hidden;
+  background: var(--bg-color-title);
+  padding: 1em;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.item-content {
+  display: none;
+  color: var(--bg-color-greentext);
+  overflow: hidden;
+  background: var(--bg-color-content);
+  padding: 1em;
+  width: 80%;
+}
+
+.item-title:hover {
+  background: var(--bg-color-hightlighted);
+}
+
+.item > input:checked ~ .item-content {
+  display: block;
+}
+
+.item-title::after {
+  content: '+';
+}
+
+.item > input:checked ~ .item-title {
+  font-weight: bold;
+  color: var(--bg-color-whitetext);
+  background: var(--bg-color-hightlighted);
+}
+
+.item > input:checked ~ .item-title::after {
+  content: '-';
+}
+
+.item > input[type= 'radio'] {
+  display: none;
+}
