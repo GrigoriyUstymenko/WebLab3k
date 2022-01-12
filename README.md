@@ -1,3 +1,4 @@
-Web lab 1
+Web lab 3
 
-https://web-lab1-nine.vercel.app/
+Deployment:
+https://web-lab3k-2t9fnx8d9-grigoriyustymenko.vercel.app/
